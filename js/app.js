@@ -1,4 +1,4 @@
-var launchUrl = "https://launchlibrary.net/1.2/launch/next/100";
+var launchUrl = "https://launchlibrary.net/1.2/launch/next/51";
 
 function getLaunchData(callBack) {
     $.getJSON(launchUrl, callBack);
@@ -42,6 +42,27 @@ function displayResults(data) {
 
     $('.scheduledLaunches').html(scheduledLaunches);
     $('.unscheduledLaunches').html(unscheduledLaunches);
+
+    function nextLaunch () {
+        debugger;
+        var launchName = data.launches[0].name;
+        var launchDate = new Date(data.launches[0].net).toDateString();
+        var startCountdownDate = Date.now();
+        console.log(startCountdownDate);
+        $('.nextLaunch').html(''+
+            '<div class="card"' +
+            '<p><strong>' + launchName + '</strong></p>' + '<p><strong>Launch Date: </strong>' + launchDate + '</p>' +
+            '</div>');
+
+        var timeCountdown = countdown(startCountdownDate,data.launches[0].isonet).toString();
+        $('.countDown').html(timeCountdown);
+
+    }
+    nextLaunch();
+
+
+
+
 }
 
 function getLaunchMissions(launch) {

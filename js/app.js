@@ -11,14 +11,17 @@ function displayResults(data) {
     // var launchDate = data.launches.net.
 
     $.each(data.launches, function (key, launch) {
-        debugger;
+
+        var launchDate = new Date(launch.net);
+        var windowStart = new Date(launch.windowstart);
+        var windowEnd = new Date(launch.windowend);
         if (launch.tbddate != 0) {
             unscheduledLaunches +=
                 '<div class="card" ' +
                 '<p><strong>' + launch.name + '</strong></p>' +
                 '<p><strong>Launch Date: </strong> TBD</p>' +
                 getLaunchMissions(launch) +
-                '<p><strong>Launch Window: </strong> ' + launch.windowstart + ' - ' + launch.windowend + '</p>' +
+
                 '</div>';
         } else {
 
@@ -26,11 +29,14 @@ function displayResults(data) {
             scheduledLaunches += '' +
                 '<div class="card" ' +
                 '<p><strong>' + launch.name + '</strong></p>' +
-                '<p><strong>Launch Date: </strong>' + launch.net + '</p>' +
+                '<p><strong>Launch Date: </strong>' + launchDate.toDateString() + '</p>' +
                 getLaunchMissions(launch) +
-                '<p><strong>Launch Window: </strong> ' + launch.windowstart + ' - ' + launch.windowend + '</p>' +
+                '<p><strong>Launch Window: </strong><br>' +
+                '<i>Window Start: </i>' + windowStart + '<br>' +
+                '<i>Window End:</i>' + windowEnd + '</p>' +
                 '</div>';
             // resultElement += Mustache.render(template, launch);
+            console.log(launchDate);
         }
     });
 

@@ -1,23 +1,56 @@
-var launchUrl = "https://launchlibrary.net/1.2/launch/next/20";
+var launchUrl = "https://launchlibrary.net/1.2/launch/next/100";
 
-function getLaunchData (callBack){
+function getLaunchData(callBack) {
     $.getJSON(launchUrl, callBack);
 }
 
-function displayResults (data) {
-    var resultElement = '';
-    var template = $('.scheduledLaunches');
+function displayResults(data) {
+    var scheduledLaunches = '';
+    var unscheduledLaunches = '';
 
-    $.each(data.launches, function(key, launch){
-        resultElement +=
-                '<div class="card"' +
-                '<h3>' + launch.name + '</h3>' +
-                '<p><strong>Launch Date</strong>' + launch.net + '</p>'+
-                '<p><strong>Launch Window</strong> ' + launch.windowstart + ' - ' + launch.windowend +  '</p>' +
+    // var launchDate = data.launches.net.
+
+    $.each(data.launches, function (key, launch) {
+        debugger;
+        if (launch.tbddate != 0) {
+            unscheduledLaunches +=
+                '<div class="card" ' +
+                '<p><strong>' + launch.name + '</strong></p>' +
+                '<p><strong>Launch Date: </strong> TBD</p>' +
+                getLaunchMissions(launch) +
+                '<p><strong>Launch Window: </strong> ' + launch.windowstart + ' - ' + launch.windowend + '</p>' +
                 '</div>';
-        // resultElement += Mustache.render(template, launch);
+        } else {
+
+
+            scheduledLaunches += '' +
+                '<div class="card" ' +
+                '<p><strong>' + launch.name + '</strong></p>' +
+                '<p><strong>Launch Date: </strong>' + launch.net + '</p>' +
+                getLaunchMissions(launch) +
+                '<p><strong>Launch Window: </strong> ' + launch.windowstart + ' - ' + launch.windowend + '</p>' +
+                '</div>';
+            // resultElement += Mustache.render(template, launch);
+        }
     });
-    $('.scheduledLaunches').html(resultElement);
+
+    $('.scheduledLaunches').html(scheduledLaunches);
+    $('.unscheduledLaunches').html(unscheduledLaunches);
+}
+
+function getLaunchMissions(launch) {
+    var returnElement = '';
+    $.each(launch.missions, function (key, mission) {
+        if (mission != null && mission.length === 0) {
+            return 'No missions were found';
+
+        } else {
+            returnElement += '<p><strong>Primary Mission </strong>' + mission.name + '<br>' + '<strong>Description </strong>' + mission.description + '</p>';
+
+        }
+    });
+    return returnElement;
+
 }
 
 

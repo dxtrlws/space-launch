@@ -8,3 +8,15 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.pageHeaderImg {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/page-header.jpg);
+    background-size: cover;
+    height: 100px;
+}
+
+.pageHeaderImg h2 {
+    color: #FFFFFF;
+    margin-top: 30px;
+
+}

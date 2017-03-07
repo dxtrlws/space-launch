@@ -7,9 +7,8 @@ function getLaunchData(callBack) {
 function displayResults(data) {
     var scheduledLaunches = '';
     var unscheduledLaunches = '';
-
-    // var launchDate = data.launches.net.
-
+    
+    
     $.each(data.launches, function (key, launch) {
         debugger;
         if (launch.tbddate != 0) {
@@ -22,11 +21,11 @@ function displayResults(data) {
                 '</div>';
         } else {
 
-
+            var launchDate = lauch.net.split(" ", 3);
             scheduledLaunches += '' +
                 '<div class="card" ' +
                 '<p><strong>' + launch.name + '</strong></p>' +
-                '<p><strong>Launch Date: </strong>' + launch.net + '</p>' +
+                '<p><strong>Launch Date: </strong>' + launchDate + '</p>' +
                 getLaunchMissions(launch) +
                 '<p><strong>Launch Window: </strong> ' + launch.windowstart + ' - ' + launch.windowend + '</p>' +
                 '</div>';

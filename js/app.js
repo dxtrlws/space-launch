@@ -1,5 +1,6 @@
 var launchUrl = "https://launchlibrary.net/1.2/launch/next/51";
 
+//get launch data from Launch Library 
 function getLaunchData(callBack) {
     $.getJSON(launchUrl, callBack);
 }
@@ -8,8 +9,7 @@ function displayResults(data) {
     var scheduledLaunches = '';
     var unscheduledLaunches = '';
 
-    // var launchDate = data.launches.net.
-
+    //goes through each of the launches
     $.each(data.launches, function (key, launch) {
 
         var launchDate = new Date(launch.net);
@@ -35,7 +35,7 @@ function displayResults(data) {
                 '<i>Window Start: </i>' + windowStart + '<br>' +
                 '<i>Window End:</i>' + windowEnd + '</p>' +
                 '</div>';
-            // resultElement += Mustache.render(template, launch);
+           
             console.log(launchDate);
         }
     });
@@ -43,6 +43,7 @@ function displayResults(data) {
     $('.scheduledLaunches').html(scheduledLaunches);
     $('.unscheduledLaunches').html(unscheduledLaunches);
 
+    // displays the latest launch and adds countdown timer
     function nextLaunch () {
 
         var launchName = data.launches[0].name;

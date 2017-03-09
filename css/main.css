@@ -1,7 +1,7 @@
 body {
     background-color: lightgrey;
 }
-
+/*styles the cards that hold the launches*/
 .card {
     background-color: white;
     padding: 10px;

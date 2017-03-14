@@ -1,9 +1,10 @@
 body {
-    background-color: lightgrey;
+    background-color: #252830;
+
 }
 /*styles the cards that hold the launches*/
 .card {
-    background-color: white;
+    background-color: #434857;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -23,4 +24,16 @@ body {
 
 .main {
     margin-top: 20px;
+}
+
+.container {
+    color: #e9eaea !important;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #434857;
+}
+
+.table a:hover {
+    color: inherit;
 }

@@ -22,6 +22,7 @@ body {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/page-header.jpg);
     background-size: cover;
     height: 100px;
+    margin-bottom: 20px;
 }
 
 .pageHeaderImg h2 {
@@ -62,14 +63,25 @@ header {
     padding-bottom: 10px;
 }
 
+header a {
+    color: #e9eaea;
+    
+}
+
+header a:hover {
+    color: #e9eaea;
+    
+}
+
 
 
 .hero {
     height: 400px;
-    
     background-image: url('../images/shuttle-c.jpg');
     background-size: cover;
     background-position: center;
+    clear:both;
+    margin-top: -20px;
     
 }
 
@@ -86,10 +98,45 @@ header {
 
 #logo {
     height: 70px;
+    float:left;
+    margin-right: 20px;
+    margin-top: 10px;
     
 }
 
 /*icon color*/
 .fa {
     color: #f9b233;
+}
+
+.clear {
+    clear: both;
+}
+
+.callAction {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.callAction a {
+    color: #e9eaea;
+}
+
+.panels {
+    margin-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+footer {
+    background-color: #434857;
+    height: 200px;
+}
+
+@media screen and (max-width: 500px) {
+
+
 }

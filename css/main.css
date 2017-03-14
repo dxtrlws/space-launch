@@ -1,13 +1,21 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: #252830;
+    
 
 }
 /*styles the cards that hold the launches*/
 .card {
     background-color: #434857;
     padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    
+}
+
+.card p {
+    line-height: 200%;
 }
 
 .pageHeaderImg {
@@ -36,4 +44,52 @@ body {
 
 .table a:hover {
     color: inherit;
+}
+
+.launchImage img {
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.clickable-row {
+    cursor: pointer;
+}
+
+header {
+    background-color: #434857;
+    height: 120px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+.hero {
+    height: 400px;
+    
+    background-image: url('../images/shuttle-c.jpg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.divider {
+    color: #434857;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.tagLine {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#logo {
+    height: 70px;
+    
+}
+
+/*icon color*/
+.fa {
+    color: #f9b233;
 }

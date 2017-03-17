@@ -73,6 +73,9 @@ header a:hover {
     
 }
 
+form {
+    margin-bottom: 20px;
+}
 
 
 .hero {
@@ -131,12 +134,8 @@ header a:hover {
     text-align: center;
 }
 
-footer {
-    background-color: #434857;
-    height: 200px;
-}
-
-@media screen and (max-width: 500px) {
-
-
+.filter-table input[type=search] {
+    width: 200px;
+    padding: 10px;
+    color: black;
 }

@@ -73,8 +73,12 @@ function showDetails(launchIndex) {
     $('#myModal').modal('show');
 }
 
+
+
+
 $(function () {
 
     getLaunchData(displayResults);
+    $('table').filterTable({minRows: 0});
 
 });

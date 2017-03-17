@@ -134,8 +134,22 @@ form {
     text-align: center;
 }
 
-.filter-table input[type=search] {
-    width: 200px;
-    padding: 10px;
+.filter-table input[type="search"] {
+    width: 250px;
+    height: 32px;
     color: black;
+    padding-left: 30px;
+    border: none;
+    margin-left: -10px;
+    
 }
+
+.filter-table .fa-search {
+    position: relative;
+    left: 15px;
+    
+    
+}
+
+
+

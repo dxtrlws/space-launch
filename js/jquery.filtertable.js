@@ -137,7 +137,7 @@
                 inputSelector:     null,                // use the element with this selector for the filter input field instead of creating one
                 inputName:         '',                  // name of filter input field
                 inputType:         'search',            // tag name of the filter input tag
-                label:             'Filter:',           // text to precede the filter input tag
+                label:             '',           // text to precede the filter input tag
                 minChars:          1,                   // filter only when at least this number of characters are in the filter input field
                 minRows:           8,                   // don't show the filter on tables with at least this number of rows
                 placeholder:       'Search launches', // HTML5 placeholder text for the filter field
@@ -213,7 +213,7 @@
                         container.addClass(settings.containerClass);
                     }
                     container.prepend(settings.label+' '); // add the label for the filter field
-                    filter = $('<input type="'+settings.inputType+'" placeholder="'+settings.placeholder+'" name="'+settings.inputName+'" />'); // build the filter field
+                    filter = $('<span><i class="fa fa-search"></i></span><input type="'+settings.inputType+'" placeholder="'+settings.placeholder+'" name="'+settings.inputName+'" />'); // build the filter field
                     if (settings.preventReturnKey) { // prevent return in the filter field from submitting any forms
                         filter.on('keydown', function(ev) {
                             if ((ev.keyCode || ev.which) === 13) {

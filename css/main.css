@@ -1,17 +1,18 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     background-color: #252830;
-    
-
 }
+
+
 /*styles the cards that hold the launches*/
+
 .card {
     background-color: #434857;
     padding: 10px;
     margin-bottom: 20px;
-    
 }
 
 .card p {
@@ -19,7 +20,7 @@ body {
 }
 
 .pageHeaderImg {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/page-header.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/page-header.jpg);
     background-size: cover;
     height: 100px;
     margin-bottom: 20px;
@@ -28,7 +29,6 @@ body {
 .pageHeaderImg h2 {
     color: #FFFFFF;
     margin-top: 30px;
-
 }
 
 .main {
@@ -39,7 +39,7 @@ body {
     color: #e9eaea !important;
 }
 
-.table-hover > tbody > tr:hover {
+.table-hover>tbody>tr:hover {
     background-color: #434857;
 }
 
@@ -65,27 +65,23 @@ header {
 
 header a {
     color: #e9eaea;
-    
 }
 
 header a:hover {
     color: #e9eaea;
-    
 }
 
 form {
     margin-bottom: 20px;
 }
 
-
 .hero {
     height: 400px;
     background-image: url('../images/shuttle-c.jpg');
     background-size: cover;
     background-position: center;
-    clear:both;
+    clear: both;
     margin-top: -20px;
-    
 }
 
 .divider {
@@ -101,13 +97,14 @@ form {
 
 #logo {
     height: 70px;
-    float:left;
+    float: left;
     margin-right: 20px;
     margin-top: 10px;
-    
 }
 
+
 /*icon color*/
+
 .fa {
     color: #f9b233;
 }
@@ -116,14 +113,24 @@ form {
     clear: both;
 }
 
-.callAction {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+.info {
+    margin-bottom: 20px;
 }
 
-.callAction a {
-    color: #e9eaea;
+.button {
+    max-width: 600px;
+    color: #ffffff;
+    background-color: #5cb85c;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #449d44;
 }
 
 .panels {
@@ -141,15 +148,21 @@ form {
     padding-left: 30px;
     border: none;
     margin-left: -10px;
-    
 }
 
 .filter-table .fa-search {
     position: relative;
     left: 15px;
-    
-    
 }
 
+.viewLaunches {
+    margin-top: 20px;
+    float: right;
+}
 
-
+@media screen and (max-width: 990px) {
+    .viewLaunches {
+        float: left;
+        margin-top: 0;
+    }
+}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Launches</title>
     <meta name="description" content="Find out when and where the latest rockets get launched into space">
@@ -11,26 +10,37 @@
         crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <div class="container">
-            
-                
-            <a hre="index.html"><img id="logo" class="img-responsive" src="images/rocket.png"></a>
-            <h2><a href="launches.html">Space Launches</a></h2>
-            
-       
+
+            <div class="row">
+                <div class="col-md-6">
+                    <a hre="index.html"><img id="logo" class="img-responsive" src="images/rocket.png"></a>
+                    <h2><a href="launches.html">Space Launches</a></h2>
+                </div>
+                <div class="col-md-6">
+                    <a class="btn btn-success viewLaunches" href="launches.html">View Upcoming launches</a>
+                </div>
+            </div>
         </div>
     </header>
     <hr class="divider">
-    <div class="hero">
-
-    </div>
+    <div class="hero"></div>
     <hr class="divider">
     <div class="container">
         <section class="tagLine">
             <h1>YOUR PATHWAY TO THE STARS</h1>
+        </section>
+        <section class="info">
+            <div class="card">
+                <p>This site shows upcoming rocket launches from around the world. </p>
+                <ul>
+                    <li>Data pulls from Launch Libray.net</li>
+                    <li>Able to search through the results</li>
+                    <li>Shows details of lauch data such as location and where to watch the lauch.</li>
+                </ul>
+            </div>
         </section>
         <section class="panels">
             <div class="row">
@@ -64,16 +74,6 @@
                 </div>
             </div>
         </section>
-        <section class="callAction">
-            <a href="launches.html">
-            <div class="card">
-                <h2><i class="fa fa-link"></i> View Upcoming Launches</h2>
-            </div>
-            </a>
-        </section>
     </div>
-  
-
 </body>
-
 </html>

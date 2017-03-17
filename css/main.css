@@ -117,22 +117,6 @@ form {
     margin-bottom: 20px;
 }
 
-.button {
-    max-width: 600px;
-    color: #ffffff;
-    background-color: #5cb85c;
-    padding: 20px;
-    font-size: 20px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.button:hover {
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #449d44;
-}
-
 .panels {
     margin-bottom: 20px;
 }
@@ -158,6 +142,11 @@ form {
 .viewLaunches {
     margin-top: 20px;
     float: right;
+}
+
+.btn-default {
+    background-color: #434857;
+    color: #ffffff;
 }
 
 @media screen and (max-width: 990px) {

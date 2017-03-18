@@ -9,6 +9,7 @@ function getLaunchData(callBack) {
 //creates empty array to collect objects after each loop
 var currentLaunches = [];
 
+
 //call back to loop through the launch library api
 function displayResults(data) {
 
@@ -29,7 +30,20 @@ function displayResults(data) {
         thisLaunch.windowEnd = data.launches[i].windowend;
         thisLaunch.imageUrl = data.launches[i].rocket.imageURL;
         thisLaunch.rocket = thisLaunch.missionName[0].replace(/Full Thrust/g, 'FT');
+        debugger
+        //checks map URL
+        if (data.launches[i].location.pads[0].mapURL === "") {
+            thisLaunch.locationURL = "Unknown Pad";
+        } else {
+            thisLaunch.locationURL = '<a href="' + thisLaunch.locationURL + ' " target="_blank">' + thisLaunch.location + '</a>';
+        }
 
+        //checks webcast
+        if (data.launches[i].vidURLs.length) {
+            thisLaunch.video = '<p><a href="' + thisLaunch.video + ' " target="_blank"> ' + thisLaunch.video + '</a></p>';
+        }else {
+            thisLaunch.video = "No Webcast found";
+        }
 
         //checks for agencies
         if (data.launches[i].rocket.agencies.length) {
@@ -44,6 +58,8 @@ function displayResults(data) {
         } else {
             thisLaunch.missionDesc = 'NA';
         }
+
+        $('#loading').hide();
 
         //compiles and formats data and appends it to the table
         $('.launches').append("<tr class='clickable-row' onclick='showDetails(" + i + ")' ><td>" + thisLaunch.name + "</td>" +
@@ -65,9 +81,9 @@ function displayResults(data) {
 function showDetails(launchIndex) {
     var thisLaunch = currentLaunches[launchIndex];
     $('#myModalLabel').text(thisLaunch.name);
-    $('.location').html('<a href="' + thisLaunch.URL + ' ">' + thisLaunch.location + '</a>');
+    $('.location').html(thisLaunch.locationURL);
     $('.mission').html('<p>' + thisLaunch.missionName + '</p>' + '<p>' + thisLaunch.missionDesc + '</p>');
-    $('.webcast').html('<p><a href="' + thisLaunch.video + ' "> ' + thisLaunch.video + '</a></p>');
+    $('.webcast').html(thisLaunch.video);
     $('.launchWindow').html('<p>' + thisLaunch.windowStart + '</p><p>' + thisLaunch.windowEnd + '</p>');
     $('.launchImage').html('<img class="img-responsive"  src=" ' + thisLaunch.imageUrl + '">');
     $('#myModal').modal('show');
@@ -75,9 +91,7 @@ function showDetails(launchIndex) {
 
 
 
-
 $(function () {
-
     getLaunchData(displayResults);
     $('table').filterTable({minRows: 0});
 

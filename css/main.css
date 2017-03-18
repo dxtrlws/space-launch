@@ -149,6 +149,10 @@ form {
     color: #ffffff;
 }
 
+#loading {
+    text-align: center;
+}
+
 @media screen and (max-width: 990px) {
     .viewLaunches {
         float: left;

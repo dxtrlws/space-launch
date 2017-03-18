@@ -30,7 +30,7 @@ function displayResults(data) {
         thisLaunch.windowEnd = data.launches[i].windowend;
         thisLaunch.imageUrl = data.launches[i].rocket.imageURL;
         thisLaunch.rocket = thisLaunch.missionName[0].replace(/Full Thrust/g, 'FT');
-        debugger
+   
         //checks map URL
         if (data.launches[i].location.pads[0].mapURL === "") {
             thisLaunch.locationURL = "Unknown Pad";

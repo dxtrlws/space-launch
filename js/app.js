@@ -37,7 +37,7 @@ function displayResults(data) {
         } else {
             thisLaunch.locationURL = '<a href="' + thisLaunch.locationURL + ' " target="_blank">' + thisLaunch.location + '</a>';
         }
-
+        //
         //checks webcast
         if (data.launches[i].vidURLs.length) {
             thisLaunch.video = '<p><a href="' + thisLaunch.video + ' " target="_blank"> ' + thisLaunch.video + '</a></p>';
@@ -47,7 +47,11 @@ function displayResults(data) {
 
         //checks for agencies
         if (data.launches[i].rocket.agencies.length) {
+            if (data.launches[i].rocket.agencies[0].name === "Orbital Sciences Corporation"){
+                thisLaunch.agency = "Orbital ATK";
+            }else {
             thisLaunch.agency = data.launches[i].rocket.agencies[0].name;
+            }
         } else {
             thisLaunch.agency = 'NA';
         }
